@@ -1,0 +1,209 @@
+/* Define CSS Styles */
+:root {
+  /* --primary-color: linear-gradient(90deg, lightblue, lightpink); */
+  --primary-color: #026a90;
+  --secondary-color: lightgray;
+  --third-color: white;
+}
+
+/* Set specific styles for elements */
+.green {
+  color: green;
+}
+
+/* Set styles for all */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--secondary-color);
+  font-family: sans-serif;
+}
+
+/* Header styles */
+header {
+  padding: 1rem 7rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+}
+
+header h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: aliceblue;
+}
+
+/* Search input styles */
+.search {
+  padding: 1rem;
+  border: 2px solid var(--secondary-color);
+  background-color: transparent;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: white;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  color: white;
+}
+
+/* Movie section styles */
+#movie-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* Main styles */
+#main {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Movie container styles */
+.movie-container {
+  width: 330px;
+  margin: 1vw;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-container img {
+  width: 100%;
+}
+
+#favourite-section h2 {
+  text-align: center;
+}
+
+.fav-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  height: auto;
+  width: auto;
+  color: grey;
+  z-index: 2;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  background-color: var(--primary-color);
+  letter-spacing: 2px;
+}
+
+.movie-info .title {
+  width: 80%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.movie-info span {
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 0.25em;
+}
+
+.overview {
+  position: absolute;
+  background-color: var(--third-color);
+  bottom: 0;
+  padding: 0rem 1rem 1rem;
+  max-height: max-content;
+  width: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease;
+}
+
+.movie-container:hover .overview {
+  transform: translateY(0%);
+}
+
+/* All about Side Window / Side Panel  */
+
+
+/* Favourite section styles */
+#favourite-section {
+  /* position: fixed; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25vw;
+  height: 100%;
+  background-color: rgb(61, 65, 101);
+  z-index: 3;
+  transform: translateX(-90%);
+  transition: transform 0.3s ease;
+  overflow-y: scroll;
+}
+
+#favourite-section:hover {
+  transform: translateX(0%);
+}
+
+#favourite-section h2 {
+  text-align: center;
+}
+
+/* Favorite movie container styles */
+.fav-movie-container {
+  height: 100px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: black;
+  border-radius: 5px;
+  display: flex;
+  color: white;
+  position: relative;
+}
+
+.fav-movie-info {
+  height: 100%;
+  width: 70%;
+  padding: 0rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.fav-movie-container img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* Favorite movie delete button styles */
+.fav-movie-container i {
+  position: absolute;
+  margin: 1rem;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.25rem;
+}
+
+.fav-movie-container i:hover {
+  color: red;
+}
+
+.fav-trash-button {
+  z-index: 4;
+}
